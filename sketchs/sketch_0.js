@@ -1,3 +1,5 @@
+// VENDAS Aldric
+
 let NP=480, PI = Math.PI;
 let K1=8,N=32,K=16,H=5,R1=NP*.36,R=NP*.14,RR=.9;
 let DX=NP/2,DY=NP/2,A1=0,AD=0;
