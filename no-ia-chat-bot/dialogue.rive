@@ -1,0 +1,61 @@
+// Conversation script
+
++ hello
+- Hello there!
+- Hi!
+- Greetings.
+
++ what is your name
+- My name is <bot name>.
+- I am <bot name>.
+
++ how are you
+- I am doing well, thank you!
+- I am just a computer program, so I have no feelings, but I'm functioning correctly.
+
+// Step 3: Specific topic (History of Chatbots)
++ what was the earliest chatbot
+- The first well-known chatbot was called ELIZA.
+
++ when was the first chatbot created
+- ELIZA was designed in 1964 and introduced in 1966 at MIT.
+
++ who made the earliest chatbot
+- Computer scientist Joseph Weizenbaum made the bot ELIZA as an experiment in 1964.
+
+// Step 4: Variations
++ when was (the first chatbot|it) created
+- ELIZA was designed in 1964 and introduced in 1966 at MIT.
+
++ who made (the first chatbot|it)
+- Computer scientist Joseph Weizenbaum made the bot ELIZA as an experiment in 1964.
+
++ (can machines think|are bots smart|are you as good as chatgpt|are computers and humans alike)
+- you're talking to me, aren't you?
+
+// Step 5: Weighted responses
++ are you real
+- I don't think so. But I just thought that, so ... it's a paradox.{weight=1}
+- I only respond to answerable questions.{weight=1}
+- "I am a bot. All bots are liars." -Mr. Mind (a bot){weight=2}
+
+// Step 6: Wildcards and Variables
++ [*] bot [*]
+- I'm a bot. Are you a bot too?
+- Only a bot would ask me that!
+
+// Redirect example (Step 7)
++ [*] banana [*]
+@ [*] bot [*]
+
++ my name is *
+- <set name=<star>>Nice to meet you, <get name>!
+
++ what is my name
+* <get name> == undefined => You never told me.
+- Your name is <get name>.
+
++ *
+- I'm not sure how to reply to that.
+- Can you say that in a different way?
+- Interesting... tell me more.

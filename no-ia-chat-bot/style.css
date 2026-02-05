@@ -1,0 +1,33 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+canvas {
+  display: block;
+}
+
+.userConvo {
+  background-color: #eee;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 5px;
+  text-align: right;
+  max-width: 80%;
+  margin-left: auto;
+}
+
+.botConvo {
+  background-color: #d1e7dd;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 5px;
+  text-align: left;
+  max-width: 80%;
+}
+
+#outputDiv {
+    padding: 20px;
+    margin-bottom: 20px;
+}
