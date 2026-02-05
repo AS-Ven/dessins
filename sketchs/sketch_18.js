@@ -1,17 +1,18 @@
-let NP=480, PI = Math.PI;
-let K1=8,N=32,K=16,H=5,R1=NP*.36,R=NP*.14,RR=.9;
-let DX=NP/2,DY=NP/2,A1=0,AD=0;
+// Variation 18 : Changement de K1 pour changer la symétrie globale
+let NP=520, PI = Math.PI;
+let K1=9,N=32,K=16,H=5,R1=NP*.36,R=NP*.14,RR=.9; // K1 passé à 9
+let DX=NP/2,DY=NP/1.8,A1=-PI/6,AD=PI/4;
 let CX,CY,R2,R3;
 
 // ----------------------------------------------------
 
-K1=5
-N=19
-K=13
-H=30
-R1=NP*.8
-R=NP*.4
-RR=.80
+K1=9 // Changé ici aussi
+N=35
+K=15
+H=20
+R1=NP*.9
+R=NP*.35
+RR=.88
 
 // ----------------------------------------------------
 function setup() 
@@ -19,7 +20,7 @@ function setup()
   INIT({svg:true});
 
   for (let I1 = 0; I1 < N; I1++) {
-    R2 = 1.1 * R1*pow(RR,I1);
+    R2 = 1.3 * R1*pow(RR,I1);
     R3 = R*pow(RR,I1);
     
     CX = 3 * DX+R2*cos(2*PI*I1/K1+A1);
@@ -41,7 +42,4 @@ function GOSUB_ETOILES_REGULIERES()
     if (I == 0) LPRINT(`M${X},${Y}`);
     if (I > 0) LPRINT(`D${X},${Y}`);
   }
-  
 }
-
-
